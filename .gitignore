@@ -11,3 +11,19 @@
 *.lai
 *.la
 *.a
+
+
+
+# Binaries
+*.exe
+*.lib
+*.dll
+
+# Compile Intermediate Objects
+x64/*
+Debug/*
+Release/*
+
+#Visual Studio personal settings
+*.user
+*.vcxproj.filters
