@@ -34,7 +34,6 @@ public:
 	virtual void Destroy();
 
 	virtual HRESULT CompileShader(const std::string& filename, const std::string& functionName) override;
-	virtual HRESULT CreateShaderbufferDesc(UINT bufferSize) override;
 	virtual HRESULT CreateCBufferDesc(const std::string& bufferName, UINT bufferSize) override;
 	
 	virtual HRESULT SetCBufferDesc(const std::string& bufferName, void* bufferData, UINT bufferSize) override;
@@ -43,7 +42,7 @@ public:
 	void BeginRender();
 	void EndRender();
 
-	HRESULT CreateSamplerState();
+	virtual HRESULT CreateShaderbufferDesc();
 
 	ID3D11VertexShader* GetShader() const { return mShader; }
 private:

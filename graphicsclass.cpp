@@ -3,7 +3,6 @@
 
 #include <d3dclass.h>
 #include <cameraclass.h>
-#include <textureshaderclass.h>
 #include <textclass.h>
 #include <modelclass.h>
 
