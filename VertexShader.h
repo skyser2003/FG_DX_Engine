@@ -26,6 +26,12 @@ struct LightBufferType
 
 class VertexShader : public Shader
 {
+private:
+	struct Semantic
+	{
+		std::string name;
+		D3D11_INPUT_ELEMENT_DESC desc;
+	};
 public:
 	VertexShader() {}
 	virtual ~VertexShader() {}
@@ -42,7 +48,8 @@ public:
 	void BeginRender();
 	void EndRender();
 
-	virtual HRESULT CreateShaderbufferDesc();
+	void SetupShaderBufferInputType(const std::string& semanticName);
+	virtual HRESULT CreateShaderBufferDesc();
 
 	ID3D11VertexShader* GetShader() const { return mShader; }
 private:
@@ -53,5 +60,6 @@ private:
 
 	std::map<std::string, D3D11_BUFFER_DESC> mBufferDescList;
 	std::map<std::string, ID3D11Buffer*> mBufferList;
+	std::vector<Semantic> mShaderBufferDescs;
 	int noCBuffer;
 };
