@@ -7,7 +7,16 @@ void PixelShader::Initialize()
 }
 void PixelShader::Destroy()
 {
+	mShader->Release();
+	mPixelShaderBuffer->Release();
+	mSamplerState->Release();
+	for (auto pair : mBufferList)
+	{
+		pair.second->Release();
+	}
 
+	mBufferDescList.clear();
+	mBufferList.clear();
 }
 
 HRESULT PixelShader::CompileShader(const std::string& filename, const std::string& functionName)

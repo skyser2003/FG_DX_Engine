@@ -8,6 +8,17 @@ void VertexShader::Initialize()
 }
 void VertexShader::Destroy()
 {
+	mShader->Release();
+	mVertexShaderBuffer->Release();
+	mLayout->Release();
+	for (auto pair : mBufferList)
+	{
+		pair.second->Release();
+	}
+
+	mBufferDescList.clear();
+	mBufferList.clear();
+	mShaderBufferDescs.clear();
 }
 
 HRESULT VertexShader::CompileShader(const std::string& filename, const std::string& functionName)
@@ -177,25 +188,22 @@ HRESULT VertexShader::CreateShaderBufferDesc()
 	}
 
 	HRESULT result;
-	unsigned numElements = mShaderBufferDescs.size();
+	size_t numElements = mShaderBufferDescs.size();
 
 	D3D11_INPUT_ELEMENT_DESC* layouts = new D3D11_INPUT_ELEMENT_DESC[numElements];
 
-	for (int i = 0; i < numElements; ++i)
+	for (size_t i = 0; i < numElements; ++i)
 	{
 		mShaderBufferDescs[i].desc.SemanticName = mShaderBufferDescs[i].name.c_str();
 		memcpy_s(&layouts[i], sizeof(layouts[i]), &mShaderBufferDescs[i].desc, sizeof(mShaderBufferDescs[i].desc));
 	}
 
 	// Create the vertex input layout.
-	result = GetDevice()->CreateInputLayout(layouts, numElements, mVertexShaderBuffer->GetBufferPointer(), mVertexShaderBuffer->GetBufferSize(), &mLayout);
+	result = GetDevice()->CreateInputLayout(layouts, static_cast<unsigned>(numElements), mVertexShaderBuffer->GetBufferPointer(), mVertexShaderBuffer->GetBufferSize(), &mLayout);
 	if (FAILED(result))
 	{
 		return result;
 	}
-
-	mVertexShaderBuffer->Release();
-	mVertexShaderBuffer = nullptr;
 
 	delete[] layouts;
 

@@ -56,7 +56,6 @@ private:
 	ID3D11VertexShader* mShader;
 	ID3D10Blob* mVertexShaderBuffer;
 	ID3D11InputLayout* mLayout;
-	ID3D11SamplerState* mSampleState;
 
 	std::map<std::string, D3D11_BUFFER_DESC> mBufferDescList;
 	std::map<std::string, ID3D11Buffer*> mBufferList;
