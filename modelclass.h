@@ -31,7 +31,7 @@ public:
 	void SetB(float b);
 	void SetA(float a);
 	void SetRGBA(float r, float g, float b, float a);
-	void SetVertex(ID3D11Device* device,int noVertices,D3DXVECTOR3* positions, D3DXVECTOR2* texPositions, D3DXVECTOR3* normal);
+	void SetVertex(ID3D11Device* device,int noVertices,const D3DXVECTOR3* positions, const D3DXVECTOR2* texPositions = nullptr, const D3DXVECTOR3* normal = nullptr);
 	void SetRotation(float x, float y, float z);
 
 	void InitializeRect(ID3D11Device* device,float x,float y,float width,float height,

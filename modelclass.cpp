@@ -44,10 +44,12 @@ void ModelClass::SetRGBA(float r,float g,float b,float a)
 	this->a = a;
 }
 
-void ModelClass::SetVertex(ID3D11Device* device,int noVertices,D3DXVECTOR3* positions, D3DXVECTOR2* texPositions, D3DXVECTOR3* normal)
+void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const D3DXVECTOR3* positions, const D3DXVECTOR2* texPositions, const D3DXVECTOR3* normal)
 {
 	VertexType* vertices = new VertexType[noVertices];
 	unsigned long* indices = new unsigned long[noVertices];
+
+	memset(vertices, 0, sizeof(VertexType)* noVertices);
 
 	D3D11_BUFFER_DESC vertexBufferDesc, indexBufferDesc;
 	D3D11_SUBRESOURCE_DATA vertexData, indexData;
@@ -61,15 +63,30 @@ void ModelClass::SetVertex(ID3D11Device* device,int noVertices,D3DXVECTOR3* posi
 
 	// Load the index array with data.
 	// Counter-Clockwise
-	for(int i=0;i<m_indexCount;++i)
+	for (int i = 0; i < m_indexCount; ++i)
+	{
 		indices[i] = i;
+	}
 
 	for(int i=0;i<m_vertexCount;++i)
 	{
 		vertices[i].position = positions[i];
 		vertices[i].color = D3DXVECTOR4(r,g,b,a);
-		vertices[i].texture = texPositions[i]; //D3DXVECTOR2((positions[i].x - leftMost) / width, (topMost - positions[i].y) / height);
-		vertices[i].normal = normal[i];
+	}
+
+	if (texPositions != nullptr)
+	{
+		for (int i = 0; i < m_vertexCount; ++i)
+		{
+			vertices[i].texture = texPositions[i];
+		}
+	}
+	if (normal != nullptr)
+	{
+		for (int i = 0; i < m_vertexCount; ++i)
+		{
+			vertices[i].normal = normal[i];
+		}
 	}
 
 	// Set up the description of the static vertex buffer.
