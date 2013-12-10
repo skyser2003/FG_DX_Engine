@@ -54,10 +54,10 @@ HRESULT VertexShader::CompileShader(const std::string& filename, const std::stri
 	result = GetDevice()->CreateVertexShader(mVertexShaderBuffer->GetBufferPointer(), mVertexShaderBuffer->GetBufferSize(), nullptr, &mShader);
 	if (FAILED(result))
 	{
-		return false;
+		return result;
 	}
 
-	return true;
+	return result;
 }
 HRESULT VertexShader::CreateCBufferDesc(const std::string& bufferName, UINT bufferSize)
 {
