@@ -43,6 +43,13 @@ void ModelClass::SetRGBA(float r,float g,float b,float a)
 	this->b = b;
 	this->a = a;
 }
+void ModelClass::SetRGBA(D3DXVECTOR4 rgba)
+{
+	r = rgba[0];
+	g = rgba[1];
+	b = rgba[2];
+	a = rgba[3];
+}
 
 void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const D3DXVECTOR3* positions, const D3DXVECTOR2* texPositions, const D3DXVECTOR3* normal)
 {
