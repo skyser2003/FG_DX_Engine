@@ -26,4 +26,3 @@ Release/*
 
 #Visual Studio personal settings
 *.user
-*.vcxproj.filters
