@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="graphicsclass.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="modelclass.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="cameraclass.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dclass.cpp">
+      <Filter>DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include=".\dxstdafx.cpp">
+      <Filter>PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="fontclass.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="lightclass.cpp">
+      <Filter>Light</Filter>
+    </ClCompile>
+    <ClCompile Include="textureclass.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="textclass.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="fontshaderclass.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexShader.cpp">
+      <Filter>Shaders\VertexShader</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShader.cpp">
+      <Filter>Shaders\PixelShader</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="graphicsclass.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="modelclass.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="cameraclass.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include=".\dxstdafx.h">
+      <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dclass.h">
+      <Filter>DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="fontclass.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="lightclass.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="textureclass.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="textclass.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="fontshaderclass.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexShader.h">
+      <Filter>Shaders\VertexShader</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShader.h">
+      <Filter>Shaders\PixelShader</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Shaders\pscolor.hlsl" />
+    <None Include="..\..\..\Shaders\psfont.hlsl" />
+    <None Include="..\..\..\Shaders\pslight.hlsl" />
+    <None Include="..\..\..\Shaders\pstexture.hlsl" />
+    <None Include="..\..\..\Shaders\shaders.hlsl" />
+    <None Include="..\..\..\Shaders\vsfont.hlsl" />
+    <None Include="..\..\..\Shaders\vslight.hlsl" />
+    <None Include="..\..\..\Shaders\vstexture.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{e94f5367-6928-4d96-a448-3926967bfeef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{6e586c2a-34d0-4572-879b-67fe57b52908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{9cc1dbf8-420f-4e76-b49b-6761c56908d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX">
+      <UniqueIdentifier>{7832a301-97e0-451a-ad54-44ab5b4a9042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{51ac3054-22df-466d-8b00-0502595b6682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{927ad117-9103-49c5-b757-eb54fb2ac30b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Light">
+      <UniqueIdentifier>{efb7e0b0-8435-4aa5-897f-b0f17debc888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{bcf497c7-32df-4433-9a75-98113f18e4aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Text">
+      <UniqueIdentifier>{1adabd96-3b59-49f6-92dd-bb2d70f4bbea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\PixelShader">
+      <UniqueIdentifier>{d938b384-fa37-4e23-82f8-b041ed04db21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\VertexShader">
+      <UniqueIdentifier>{27bc0b33-5448-4594-8ec1-ec873cfce86e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
