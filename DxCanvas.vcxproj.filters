@@ -37,9 +37,11 @@
     <ClCompile Include="PixelShader.cpp">
       <Filter>Shaders\PixelShader</Filter>
     </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Canvas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="shader.h" />
     <ClInclude Include="graphicsclass.h">
       <Filter>Graphics</Filter>
     </ClInclude>
@@ -76,16 +78,12 @@
     <ClInclude Include="PixelShader.h">
       <Filter>Shaders\PixelShader</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\Shaders\pscolor.hlsl" />
-    <None Include="..\..\..\Shaders\psfont.hlsl" />
-    <None Include="..\..\..\Shaders\pslight.hlsl" />
-    <None Include="..\..\..\Shaders\pstexture.hlsl" />
-    <None Include="..\..\..\Shaders\shaders.hlsl" />
-    <None Include="..\..\..\Shaders\vsfont.hlsl" />
-    <None Include="..\..\..\Shaders\vslight.hlsl" />
-    <None Include="..\..\..\Shaders\vstexture.hlsl" />
+    <ClInclude Include="shader.h">
+      <Filter>Shaders\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Canvas</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">
@@ -120,6 +118,12 @@
     </Filter>
     <Filter Include="Shaders\VertexShader">
       <UniqueIdentifier>{27bc0b33-5448-4594-8ec1-ec873cfce86e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Shader">
+      <UniqueIdentifier>{87185af9-45a6-414c-9f02-41ac705af773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Canvas">
+      <UniqueIdentifier>{82f8e68a-f901-4c08-bf52-c119f277009d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
