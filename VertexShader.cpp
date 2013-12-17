@@ -4,7 +4,6 @@
 
 void VertexShader::Initialize()
 {
-	noCBuffer = 0;
 }
 void VertexShader::Destroy()
 {

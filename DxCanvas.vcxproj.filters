@@ -37,7 +37,10 @@
     <ClCompile Include="PixelShader.cpp">
       <Filter>Shaders\PixelShader</Filter>
     </ClCompile>
-    <ClCompile Include="Canvas.cpp">
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DxCanvas.cpp">
       <Filter>Canvas</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,7 +84,13 @@
     <ClInclude Include="shader.h">
       <Filter>Shaders\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="Canvas.h">
+    <ClInclude Include="RenderInfo.h">
+      <Filter>Canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DxCanvas.h">
       <Filter>Canvas</Filter>
     </ClInclude>
   </ItemGroup>
@@ -124,6 +133,9 @@
     </Filter>
     <Filter Include="Canvas">
       <UniqueIdentifier>{82f8e68a-f901-4c08-bf52-c119f277009d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TextureManager">
+      <UniqueIdentifier>{22ab9506-a71f-4666-89e6-765f91f4212e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
