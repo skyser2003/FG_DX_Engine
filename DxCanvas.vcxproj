@@ -190,6 +190,7 @@
     <ClInclude Include="cameraclass.h" />
     <ClInclude Include="DxCanvas.h" />
     <ClInclude Include="d3dclass.h" />
+    <ClInclude Include="dxType.h" />
     <ClInclude Include="fontclass.h" />
     <ClInclude Include="fontshaderclass.h" />
     <ClInclude Include="graphicsclass.h" />

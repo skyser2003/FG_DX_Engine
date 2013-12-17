@@ -93,6 +93,9 @@
     <ClInclude Include="DxCanvas.h">
       <Filter>Canvas</Filter>
     </ClInclude>
+    <ClInclude Include="dxType.h">
+      <Filter>Type</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">
@@ -136,6 +139,9 @@
     </Filter>
     <Filter Include="TextureManager">
       <UniqueIdentifier>{22ab9506-a71f-4666-89e6-765f91f4212e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Type">
+      <UniqueIdentifier>{c7cc67b7-67e8-4a1a-b76d-c839dde63747}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
