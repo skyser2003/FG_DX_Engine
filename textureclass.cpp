@@ -35,7 +35,7 @@ bool TextureClass::Initialize(ID3D11Device* device, const char* filename)
 	loadInfo.pSrcInfo = nullptr; 
 
 	// Load the texture in.
-	result = D3DX11CreateShaderResourceViewFromFile(device, filename, nullptr, nullptr, &m_texture, nullptr);
+	result = D3DX11CreateShaderResourceViewFromFile(device, filename, &loadInfo, nullptr, &m_texture, nullptr);
 
 	if(FAILED(result))
 	{
