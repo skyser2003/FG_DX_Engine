@@ -71,11 +71,11 @@ void DxCanvas::Render()
 
 	for (const auto& info : mRenderInfoList)
 	{
-		auto* position = info.position.data();
 		if (info.noVertices != info.position.size()) {
 			continue;
 		}
 
+		auto* position = info.position.data();
 		auto* texPosition = info.texPosition.data();
 		auto* normal = info.normal.data();
 
