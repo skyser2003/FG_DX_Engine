@@ -87,7 +87,7 @@ void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const FG::VECTO
 	{
 		for (int i = 0; i < m_vertexCount; ++i)
 		{
-			for (int j = 0; j < 3; ++j) {
+			for (int j = 0; j < 2; ++j) {
 				vertices[i].texture[j] = texPositions[i][j];
 			}
 		}
