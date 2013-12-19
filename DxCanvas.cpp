@@ -120,7 +120,7 @@ std::shared_ptr<PixelShader> DxCanvas::CreatePixelShader()
 	return ps;
 }
 
-void DxCanvas::AddRenderInfo(const RenderInfo& info)
+void DxCanvas::AddRenderInfo(const FG::RenderInfo& info)
 {
 	mRenderInfoList.push_back(info);
 }

@@ -10,6 +10,9 @@ class PixelShader;
 
 class TextureManager;
 
+class ID3D11Device;
+class ID3D11DeviceContext;
+
 class DxCanvas
 {
 public:
@@ -26,7 +29,7 @@ public:
 	std::shared_ptr<VertexShader> CreateVertexShader();
 	std::shared_ptr<PixelShader> CreatePixelShader();
 
-	void AddRenderInfo(const RenderInfo& info);
+	void AddRenderInfo(const FG::RenderInfo& info);
 
 	void EquipVertexShader(const std::shared_ptr<VertexShader>& vs);
 	void EquipPixelShader(const std::shared_ptr<PixelShader>& ps);
@@ -44,7 +47,7 @@ private:
 
 	TextureManager* mTexManager;
 
-	std::vector<RenderInfo> mRenderInfoList;
+	std::vector<FG::RenderInfo> mRenderInfoList;
 	std::vector<std::shared_ptr<VertexShader>> mVSList;
 	std::vector<std::shared_ptr<PixelShader>> mPSList;
 

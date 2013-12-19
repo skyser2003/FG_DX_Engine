@@ -43,6 +43,9 @@
     <ClCompile Include="DxCanvas.cpp">
       <Filter>Canvas</Filter>
     </ClCompile>
+    <ClCompile Include="dxType.cpp">
+      <Filter>Type</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphicsclass.h">

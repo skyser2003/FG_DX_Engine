@@ -2,41 +2,28 @@
 
 namespace FG
 {
-	template <int D>
-	struct VECTOR
+	struct VECTOR2
 	{
 	public:
-		float& operator[](int index)
-		{
-			return vector[index];
-		}
+		operator float*();
+		operator const float*() const;
 
-		float operator[](int index) const
-		{
-			return vector[index];
-		}
-	private:
-		float vector[D];
+		float x, y;
 	};
-
-	template <>
-	struct VECTOR<2>
+	struct VECTOR3
 	{
 	public:
-		int x, y;
+		operator float*();
+		operator const float*() const;
+
+		float x, y, z;
 	};
-
-	template <>
-	struct VECTOR<3>
+	struct VECTOR4
 	{
 	public:
-		int x, y, z;
-	};
+		operator float*();
+		operator const float*() const;
 
-	template <>
-	struct VECTOR<4>
-	{
-	public:
-		int x, y, z, w;
+		float x, y, z, w;
 	};
 }

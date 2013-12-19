@@ -1,12 +1,15 @@
 #pragma once
 
-struct RenderInfo
-{
-	int noVertices;
-	std::vector<D3DXVECTOR3> position;
-	D3DXVECTOR4 color;
-	std::vector<D3DXVECTOR2> texPosition;
-	std::vector<D3DXVECTOR3> normal;
+#include "dxType.h"
 
-	ID3D11ShaderResourceView* texture;
-};
+namespace FG
+{
+	struct RenderInfo
+	{
+		int noVertices;
+		std::vector<VECTOR3> position;
+		VECTOR4 color;
+		std::vector<VECTOR2> texPosition;
+		std::vector<VECTOR3> normal;
+	};
+}
