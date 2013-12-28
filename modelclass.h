@@ -8,13 +8,6 @@
 
 class GraphicsClass;
 
-namespace FG
-{
-	class VECTOR2;
-	class VECTOR3;
-	class VECTOR4;
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 // Class name: ModelClass
 ////////////////////////////////////////////////////////////////////////////////
@@ -38,8 +31,8 @@ public:
 	void SetB(float b);
 	void SetA(float a);
 	void SetRGBA(float r, float g, float b, float a);
-	void SetRGBA(const FG::VECTOR4& rgba);
-	void SetVertex(ID3D11Device* device, int noVertices, const FG::VECTOR3* positions, const FG::VECTOR2* texPositions = nullptr, const FG::VECTOR3* normal = nullptr);
+	void SetRGBA(D3DXVECTOR4 rgba);
+	void SetVertex(ID3D11Device* device,int noVertices,const D3DXVECTOR3* positions, const D3DXVECTOR2* texPositions = nullptr, const D3DXVECTOR3* normal = nullptr);
 	void SetRotation(float x, float y, float z);
 
 	void Render(ID3D11DeviceContext*);

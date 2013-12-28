@@ -40,6 +40,3 @@
 #include <functional>
 #include <array>
 #include <map>
-
-// FG
-#include "dxType.h"

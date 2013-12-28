@@ -43,9 +43,6 @@
     <ClCompile Include="DxCanvas.cpp">
       <Filter>Canvas</Filter>
     </ClCompile>
-    <ClCompile Include="dxType.cpp">
-      <Filter>Type</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphicsclass.h">
@@ -96,9 +93,6 @@
     <ClInclude Include="DxCanvas.h">
       <Filter>Canvas</Filter>
     </ClInclude>
-    <ClInclude Include="dxType.h">
-      <Filter>Type</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">
@@ -106,9 +100,6 @@
     </Filter>
     <Filter Include="Model">
       <UniqueIdentifier>{6e586c2a-34d0-4572-879b-67fe57b52908}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Camera">
-      <UniqueIdentifier>{9cc1dbf8-420f-4e76-b49b-6761c56908d9}</UniqueIdentifier>
     </Filter>
     <Filter Include="DirectX">
       <UniqueIdentifier>{7832a301-97e0-451a-ad54-44ab5b4a9042}</UniqueIdentifier>
@@ -143,8 +134,8 @@
     <Filter Include="TextureManager">
       <UniqueIdentifier>{22ab9506-a71f-4666-89e6-765f91f4212e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Type">
-      <UniqueIdentifier>{c7cc67b7-67e8-4a1a-b76d-c839dde63747}</UniqueIdentifier>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{9cc1dbf8-420f-4e76-b49b-6761c56908d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

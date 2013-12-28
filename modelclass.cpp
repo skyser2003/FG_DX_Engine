@@ -43,7 +43,7 @@ void ModelClass::SetRGBA(float r,float g,float b,float a)
 	this->b = b;
 	this->a = a;
 }
-void ModelClass::SetRGBA(const FG::VECTOR4& rgba)
+void ModelClass::SetRGBA(D3DXVECTOR4 rgba)
 {
 	r = rgba[0];
 	g = rgba[1];
@@ -51,7 +51,7 @@ void ModelClass::SetRGBA(const FG::VECTOR4& rgba)
 	a = rgba[3];
 }
 
-void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const FG::VECTOR3* positions, const FG::VECTOR2* texPositions, const FG::VECTOR3* normal)
+void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const D3DXVECTOR3* positions, const D3DXVECTOR2* texPositions, const D3DXVECTOR3* normal)
 {
 	VertexType* vertices = new VertexType[noVertices];
 	unsigned long* indices = new unsigned long[noVertices];
@@ -77,9 +77,7 @@ void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const FG::VECTO
 
 	for(int i=0;i<m_vertexCount;++i)
 	{
-		for (int j = 0; j < 3; ++j) {
-			vertices[i].position[j] = positions[i][j];
-		}
+		vertices[i].position = positions[i];
 		vertices[i].color = D3DXVECTOR4(r,g,b,a);
 	}
 
@@ -87,18 +85,14 @@ void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const FG::VECTO
 	{
 		for (int i = 0; i < m_vertexCount; ++i)
 		{
-			for (int j = 0; j < 2; ++j) {
-				vertices[i].texture[j] = texPositions[i][j];
-			}
+			vertices[i].texture = texPositions[i];
 		}
 	}
 	if (normal != nullptr)
 	{
 		for (int i = 0; i < m_vertexCount; ++i)
 		{
-			for (int j = 0; j < 3; ++j) {
-				vertices[i].normal[j] = normal[i][j];
-			}
+			vertices[i].normal = normal[i];
 		}
 	}
 
