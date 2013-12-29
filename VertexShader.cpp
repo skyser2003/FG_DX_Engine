@@ -161,7 +161,7 @@ void VertexShader::SetupShaderBufferInputType(const std::string& semanticName)
 
 	if (IsSemanticName("POSITION"))
 	{
-		sem.desc.Format = DXGI_FORMAT_R32G32B32_FLOAT;
+		sem.desc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
 	}
 	else if (IsSemanticName("TEXCOORD"))
 	{

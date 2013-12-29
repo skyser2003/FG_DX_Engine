@@ -16,9 +16,9 @@ class ModelClass
 public:
 	struct VertexType
 	{
-		D3DXVECTOR3 position;
-		D3DXVECTOR2 texture;
+		D3DXVECTOR4 position;
 		D3DXVECTOR4 color;
+		D3DXVECTOR2 texture;
 		D3DXVECTOR3 normal;
 	};
 public:
@@ -32,7 +32,7 @@ public:
 	void SetA(float a);
 	void SetRGBA(float r, float g, float b, float a);
 	void SetRGBA(D3DXVECTOR4 rgba);
-	void SetVertex(ID3D11Device* device,int noVertices,const D3DXVECTOR3* positions, const D3DXVECTOR2* texPositions = nullptr, const D3DXVECTOR3* normal = nullptr);
+	void SetVertex(ID3D11Device* device,int noVertices,const D3DXVECTOR4* positions, const D3DXVECTOR2* texPositions = nullptr, const D3DXVECTOR3* normal = nullptr);
 	void SetRotation(float x, float y, float z);
 
 	void Render(ID3D11DeviceContext*);

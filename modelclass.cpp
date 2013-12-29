@@ -51,7 +51,7 @@ void ModelClass::SetRGBA(D3DXVECTOR4 rgba)
 	a = rgba[3];
 }
 
-void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const D3DXVECTOR3* positions, const D3DXVECTOR2* texPositions, const D3DXVECTOR3* normal)
+void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const D3DXVECTOR4* positions, const D3DXVECTOR2* texPositions, const D3DXVECTOR3* normal)
 {
 	VertexType* vertices = new VertexType[noVertices];
 	unsigned long* indices = new unsigned long[noVertices];
