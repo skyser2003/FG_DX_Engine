@@ -8,6 +8,7 @@
 #include "VertexShader.h"
 
 #include "TextureManager.h"
+#include "textureclass.h"
 
 DxCanvas::DxCanvas()
 {
@@ -86,6 +87,9 @@ void DxCanvas::Render()
 			normal = nullptr;
 		}
 
+		if (info.texture != nullptr) {
+			mPS->SetTexture(info.texture->GetTexture());
+		}
 		mModel->SetRGBA(info.color);
 		mModel->SetVertex(mGraphics->GetDevice(), info.noVertices, position, texPosition, normal);
 		mModel->Render(mGraphics->GetDeviceContext());
