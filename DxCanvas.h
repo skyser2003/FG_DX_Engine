@@ -41,6 +41,7 @@ namespace FG
 		GraphicsClass* GetGraphics() const;
 		ID3D11Device* GetDevice() const;
 		ID3D11DeviceContext* GetDeviceContext() const;
+		TextureManager& GetTextureManager() const;
 	private:
 		GraphicsClass* mGraphics;
 		ModelClass* mModel;

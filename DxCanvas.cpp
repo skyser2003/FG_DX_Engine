@@ -150,4 +150,8 @@ namespace FG
 	{
 		return mGraphics->GetDeviceContext();
 	}
+	TextureManager& DxCanvas::GetTextureManager() const
+	{
+		return *mTexManager;
+	}
 }

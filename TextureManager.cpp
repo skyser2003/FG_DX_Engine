@@ -9,7 +9,7 @@ namespace FG
 
 	}
 
-	std::shared_ptr<TextureClass> TextureManager::GetTexture(const std::string& fileName)
+	std::shared_ptr<TextureClass> TextureManager::CreateTexture(const std::string& fileName)
 	{
 		if (mDevice == nullptr) {
 			return nullptr;
@@ -29,5 +29,10 @@ namespace FG
 
 		mTextures.insert(std::make_pair(fileName, texture));
 		return texture;
+	}
+
+	void TextureManager::SetDevice(ID3D11Device* device)
+	{
+		mDevice = device;
 	}
 }
