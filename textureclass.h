@@ -12,20 +12,22 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Class name: TextureClass
 ////////////////////////////////////////////////////////////////////////////////
-class TextureClass
+namespace FG
 {
-public:
-	TextureClass();
-	TextureClass(const TextureClass&);
-	~TextureClass();
+	class TextureClass
+	{
+	public:
+		TextureClass();
+		TextureClass(const TextureClass&);
+		~TextureClass();
 
-	bool Initialize(ID3D11Device*, const char*);
-	void Shutdown();
+		bool Initialize(ID3D11Device*, const char*);
+		void Shutdown();
 
-	ID3D11ShaderResourceView* GetTexture() const;
+		ID3D11ShaderResourceView* GetTexture() const;
 
-private:
-	ID3D11ShaderResourceView* m_texture;
-};
-
+	private:
+		ID3D11ShaderResourceView* m_texture;
+	};
+}
 #endif

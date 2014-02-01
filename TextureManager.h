@@ -1,18 +1,21 @@
 #pragma once
 
-class TextureClass;
-
-class TextureManager
+namespace FG
 {
-public:
-	TextureManager();
+	class TextureClass;
 
-	std::shared_ptr<TextureClass> GetTexture(const std::string& fileName);
+	class TextureManager
+	{
+	public:
+		TextureManager();
 
-	void SetDevice(ID3D11Device* device) { mDevice = device; }
-private:
-	std::map<std::string, std::shared_ptr<TextureClass>> mTextures;
+		std::shared_ptr<TextureClass> GetTexture(const std::string& fileName);
 
-	ID3D11Device* mDevice;
-	int nextTextureID;
-};
+		void SetDevice(ID3D11Device* device) { mDevice = device; }
+	private:
+		std::map<std::string, std::shared_ptr<TextureClass>> mTextures;
+
+		ID3D11Device* mDevice;
+		int nextTextureID;
+	};
+}

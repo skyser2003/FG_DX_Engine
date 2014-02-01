@@ -1,9 +1,10 @@
 #pragma once
 
-class TextureClass;
 
 namespace FG
 {
+	class TextureClass;
+
 	struct RenderInfo
 	{
 		int noVertices = 0;
