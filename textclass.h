@@ -36,9 +36,9 @@ namespace FG
 		TextClass(const TextClass&);
 		~TextClass();
 
-		static void SetRelativeX(float x);
-		static void SetRelativeY(float y);
-		static void SetRelativePosition(float x, float y);
+		static void SetRelativeX(int x);
+		static void SetRelativeY(int y);
+		static void SetRelativePosition(int x, int y);
 
 		bool Initialize(ID3D11Device*, ID3D11DeviceContext*, HWND, int, int, D3DXMATRIX, const char*);
 		void Shutdown();
@@ -51,7 +51,7 @@ namespace FG
 		bool RenderSentence(ID3D11DeviceContext*, SentenceType*, D3DXMATRIX, D3DXMATRIX, TextureClass*);
 
 	private:
-		static float relativeX, relativeY;
+		static int relativeX, relativeY;
 
 		FontClass* m_Font;
 		int m_screenWidth, m_screenHeight;

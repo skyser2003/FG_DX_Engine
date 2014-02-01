@@ -272,7 +272,7 @@ namespace FG
 	void FontShaderClass::OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND hwnd, const char* shaderFilename)
 	{
 		char* compileErrors;
-		unsigned long bufferSize, i;
+		ULONG_PTR bufferSize, i;
 		std::ofstream fout;
 
 

@@ -5,8 +5,8 @@
 #include "textclass.h"
 namespace FG
 {
-	float TextClass::relativeX;
-	float TextClass::relativeY;
+	int TextClass::relativeX;
+	int TextClass::relativeY;
 
 	TextClass::TextClass()
 	{
@@ -21,15 +21,15 @@ namespace FG
 	{
 	}
 
-	void TextClass::SetRelativeX(float x)
+	void TextClass::SetRelativeX(int x)
 	{
 		relativeX = x;
 	}
-	void TextClass::SetRelativeY(float y)
+	void TextClass::SetRelativeY(int y)
 	{
 		relativeY = y;
 	}
-	void TextClass::SetRelativePosition(float x, float y)
+	void TextClass::SetRelativePosition(int x, int y)
 	{
 		relativeX = x;
 		relativeY = y;
@@ -62,8 +62,8 @@ namespace FG
 			return false;
 		}
 
-		relativeX = 0.0f;
-		relativeY = 0.0f;
+		relativeX = 0;
+		relativeY = 0;
 
 		return true;
 	}
