@@ -74,33 +74,18 @@ namespace FG
 
 		for (const auto& info : mRenderInfoList)
 		{
-			if (info.noVertices != info.position.size()) {
-				continue;
-			}
-
-			auto* position = info.position.data();
-			auto* texPosition = info.texPosition.data();
-			auto* normal = info.normal.data();
-
-			if (info.noVertices != info.texPosition.size()) {
-				texPosition = nullptr;
-			}
-			if (info.noVertices != info.normal.size()) {
-				normal = nullptr;
-			}
-
 			if (info.texture != nullptr) {
 				mPS->SetTexture(info.texture->GetTexture());
 			}
-			mModel->SetRGBA(info.color);
-			mModel->SetVertex(mGraphics->GetDevice(), info.noVertices, position, texPosition, normal);
+			mModel->SetRGBA(D3DXVECTOR4(1, 1, 1, 1));
+			mModel->SetVertex(mGraphics->GetDevice(), info.noVertices, info.buffer, info.bufferSize);
 			mModel->Render(mGraphics->GetDeviceContext());
 			mGraphics->GetDeviceContext()->DrawIndexed(mModel->GetIndexCount(), 0, 0);
 
 			mModel->Shutdown();
 		}
 
-		mRenderInfoList.clear();
+		ClearRenderInfo();
 	}
 
 	std::shared_ptr<VertexShader> DxCanvas::CreateVertexShader()
@@ -129,6 +114,15 @@ namespace FG
 	void DxCanvas::AddRenderInfo(const FG::RenderInfo& info)
 	{
 		mRenderInfoList.push_back(info);
+	}
+	void DxCanvas::ClearRenderInfo()
+	{
+		for (auto& info : mRenderInfoList)
+		{
+			delete info.buffer;
+		}
+
+		mRenderInfoList.clear();
 	}
 
 	void DxCanvas::EquipVertexShader(const std::shared_ptr<VertexShader>& vs)

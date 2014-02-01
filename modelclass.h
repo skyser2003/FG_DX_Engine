@@ -16,14 +16,6 @@ namespace FG
 	class ModelClass
 	{
 	public:
-		struct VertexType
-		{
-			D3DXVECTOR4 position;
-			D3DXVECTOR4 color;
-			D3DXVECTOR2 texture;
-			D3DXVECTOR3 normal;
-		};
-	public:
 		ModelClass();
 		ModelClass(const ModelClass&);
 		~ModelClass();
@@ -34,7 +26,7 @@ namespace FG
 		void SetA(float a);
 		void SetRGBA(float r, float g, float b, float a);
 		void SetRGBA(D3DXVECTOR4 rgba);
-		void SetVertex(ID3D11Device* device, int noVertices, const D3DXVECTOR4* positions, const D3DXVECTOR2* texPositions = nullptr, const D3DXVECTOR3* normal = nullptr);
+		void SetVertex(ID3D11Device* device, int noVertices, void* buffer, int bufferSize);
 		void SetRotation(float x, float y, float z);
 
 		void Render(ID3D11DeviceContext*);
@@ -48,7 +40,6 @@ namespace FG
 		float r, g, b, a;
 		float rotationX, rotationY, rotationZ;
 		D3DXMATRIX rotation;
-		VertexType* vertices;
 
 		void ShutdownBuffers();
 		void RenderBuffers(ID3D11DeviceContext*);

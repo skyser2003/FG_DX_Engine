@@ -7,11 +7,9 @@ namespace FG
 
 	struct RenderInfo
 	{
+		void* buffer = nullptr;
 		int noVertices = 0;
-		std::vector<D3DXVECTOR4> position;
-		D3DXVECTOR4 color;
-		std::vector<D3DXVECTOR2> texPosition;
-		std::vector<D3DXVECTOR3> normal;
+		int bufferSize = 0;
 
 		TextureClass* texture = nullptr;
 	};

@@ -32,6 +32,7 @@ namespace FG
 		std::shared_ptr<PixelShader> CreatePixelShader();
 
 		void AddRenderInfo(const FG::RenderInfo& info);
+		void ClearRenderInfo();
 
 		void EquipVertexShader(const std::shared_ptr<VertexShader>& vs);
 		void EquipPixelShader(const std::shared_ptr<PixelShader>& ps);

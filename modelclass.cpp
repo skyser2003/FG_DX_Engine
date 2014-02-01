@@ -10,8 +10,6 @@ namespace FG
 		m_vertexBuffer = 0;
 		m_indexBuffer = 0;
 
-		vertices = nullptr;
-
 		r = g = b = a = 1.0f;
 		rotationX = rotationY = rotationZ = 0.0f;
 	}
@@ -52,22 +50,17 @@ namespace FG
 		b = rgba[2];
 		a = rgba[3];
 	}
-
-	void ModelClass::SetVertex(ID3D11Device* device, int noVertices, const D3DXVECTOR4* positions, const D3DXVECTOR2* texPositions, const D3DXVECTOR3* normal)
+		
+	void ModelClass::SetVertex(ID3D11Device* device, int noVertices, void* buffer, int bufferSize)
 	{
-		VertexType* vertices = new VertexType[noVertices];
 		unsigned long* indices = new unsigned long[noVertices];
-
-		memset(vertices, 0, sizeof(VertexType)* noVertices);
 
 		D3D11_BUFFER_DESC vertexBufferDesc, indexBufferDesc;
 		D3D11_SUBRESOURCE_DATA vertexData, indexData;
 		HRESULT result;
 
-		// Set the number of vertices in the vertex array.
-		m_vertexCount = noVertices;
-
 		// Set the number of indices in the index array.
+		m_vertexCount = noVertices;
 		m_indexCount = noVertices;
 
 		// Load the index array with data.
@@ -77,37 +70,16 @@ namespace FG
 			indices[i] = i;
 		}
 
-		for (int i = 0; i < m_vertexCount; ++i)
-		{
-			vertices[i].position = positions[i];
-			vertices[i].color = D3DXVECTOR4(r, g, b, a);
-		}
-
-		if (texPositions != nullptr)
-		{
-			for (int i = 0; i < m_vertexCount; ++i)
-			{
-				vertices[i].texture = texPositions[i];
-			}
-		}
-		if (normal != nullptr)
-		{
-			for (int i = 0; i < m_vertexCount; ++i)
-			{
-				vertices[i].normal = normal[i];
-			}
-		}
-
 		// Set up the description of the static vertex buffer.
 		vertexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
-		vertexBufferDesc.ByteWidth = sizeof(vertices[0]) * m_vertexCount;
+		vertexBufferDesc.ByteWidth = bufferSize;
 		vertexBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 		vertexBufferDesc.CPUAccessFlags = 0;
 		vertexBufferDesc.MiscFlags = 0;
 		vertexBufferDesc.StructureByteStride = 0;
 
 		// Give the subresource structure a pointer to the vertex data.
-		vertexData.pSysMem = vertices;
+		vertexData.pSysMem = buffer;
 		vertexData.SysMemPitch = 0;
 		vertexData.SysMemSlicePitch = 0;
 
@@ -130,7 +102,6 @@ namespace FG
 		// Create the index buffer.
 		result = device->CreateBuffer(&indexBufferDesc, &indexData, &m_indexBuffer);
 
-		delete[] vertices;
 		delete[] indices;
 	}
 	void ModelClass::SetRotation(float x, float y, float z)
@@ -188,21 +159,30 @@ namespace FG
 	}
 	void ModelClass::RenderBuffers(ID3D11DeviceContext* deviceContext)
 	{
-		unsigned int stride;
-		unsigned int offset;
+		D3D11_BUFFER_DESC desc;
+		m_vertexBuffer->GetDesc(&desc);
+
+		UINT* stride = new UINT[m_vertexCount];
+		UINT* offset = new UINT[m_vertexCount];
 
 		// Set vertex buffer stride and offset.
-		stride = sizeof(VertexType);
-		offset = 0;
+		for (int i = 0; i < m_vertexCount; ++i)
+		{
+			stride[i] = desc.ByteWidth / m_vertexCount;
+			offset[i] = 0;
+		}
 
 		// Set the vertex buffer to active in the input assembler so it can be rendered.
-		deviceContext->IASetVertexBuffers(0, 1, &m_vertexBuffer, &stride, &offset);
+		deviceContext->IASetVertexBuffers(0, 1, &m_vertexBuffer, stride, offset);
 
 		// Set the index buffer to active in the input assembler so it can be rendered.
 		deviceContext->IASetIndexBuffer(m_indexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
 		// Set the type of primitive that should be rendered from this vertex buffer, in this case triangles.
 		deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+		delete[] stride;
+		delete[] offset;
 
 		return;
 	}
