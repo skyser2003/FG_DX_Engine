@@ -2,7 +2,7 @@
 // Filename: fontclass.cpp
 ///////////////////////////////////////////////////////////////////////////////
 #include <dxstdafx.h>
-#include <textureclass.h>
+#include "Texture/textureclass.h"
 #include "fontclass.h"
 
 namespace FG

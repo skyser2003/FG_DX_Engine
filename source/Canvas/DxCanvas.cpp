@@ -1,14 +1,14 @@
 #include "dxstdafx.h"
-#include "DxCanvas.h"
+#include "Canvas/DxCanvas.h"
 
-#include "graphicsclass.h"
-#include "modelclass.h"
+#include "Graphics/graphicsclass.h"
+#include "Model/modelclass.h"
 
-#include "PixelShader.h"
-#include "VertexShader.h"
+#include "Shaders/PixelShader/PixelShader.h"
+#include "Shaders/VertexShader/VertexShader.h"
 
-#include "TextureManager.h"
-#include "textureclass.h"
+#include "TextureManager/TextureManager.h"
+#include "Texture/textureclass.h"
 
 namespace FG
 {

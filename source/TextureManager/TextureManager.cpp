@@ -1,7 +1,7 @@
 #include "dxstdafx.h"
 #include "TextureManager.h"
 
-#include "textureclass.h"
+#include "Texture/textureclass.h"
 namespace FG
 {
 	TextureManager::TextureManager() : mDevice(nullptr), nextTextureID(0)

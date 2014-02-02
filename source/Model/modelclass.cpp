@@ -1,7 +1,7 @@
 #include <dxstdafx.h>
 
-#include <graphicsclass.h>
-#include <modelclass.h>
+#include "Graphics/graphicsclass.h"
+#include "Model/modelclass.h"
 
 namespace FG
 {

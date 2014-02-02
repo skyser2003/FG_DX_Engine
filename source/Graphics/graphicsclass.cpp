@@ -1,10 +1,10 @@
 #include <dxstdafx.h>
-#include <graphicsclass.h>
+#include "Graphics/graphicsclass.h"
 
-#include <d3dclass.h>
-#include <cameraclass.h>
-#include <textclass.h>
-#include <modelclass.h>
+#include "DirectX/d3dclass.h"
+#include "Camera/cameraclass.h"
+#include "Text/textclass.h"
+#include "Model/modelclass.h"
 
 namespace FG
 {

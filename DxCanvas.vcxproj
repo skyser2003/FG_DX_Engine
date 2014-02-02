@@ -18,6 +18,45 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Camera\cameraclass.h" />
+    <ClInclude Include="source\Canvas\DxCanvas.h" />
+    <ClInclude Include="source\Canvas\RenderInfo.h" />
+    <ClInclude Include="source\DirectX\d3dclass.h" />
+    <ClInclude Include="source\Graphics\graphicsclass.h" />
+    <ClInclude Include="source\Light\lightclass.h" />
+    <ClInclude Include="source\Model\modelclass.h" />
+    <ClInclude Include="source\PCH\dxstdafx.h" />
+    <ClInclude Include="source\Shaders\PixelShader\PixelShader.h" />
+    <ClInclude Include="source\Shaders\Shader\shader.h" />
+    <ClInclude Include="source\Shaders\VertexShader\VertexShader.h" />
+    <ClInclude Include="source\TextureManager\TextureManager.h" />
+    <ClInclude Include="source\Texture\textureclass.h" />
+    <ClInclude Include="source\Text\fontclass.h" />
+    <ClInclude Include="source\Text\fontshaderclass.h" />
+    <ClInclude Include="source\Text\textclass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Camera\cameraclass.cpp" />
+    <ClCompile Include="source\Canvas\DxCanvas.cpp" />
+    <ClCompile Include="source\DirectX\d3dclass.cpp" />
+    <ClCompile Include="source\Graphics\graphicsclass.cpp" />
+    <ClCompile Include="source\Light\lightclass.cpp" />
+    <ClCompile Include="source\Model\modelclass.cpp" />
+    <ClCompile Include="source\PCH\dxstdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\Shaders\PixelShader\PixelShader.cpp" />
+    <ClCompile Include="source\Shaders\VertexShader\VertexShader.cpp" />
+    <ClCompile Include="source\TextureManager\TextureManager.cpp" />
+    <ClCompile Include="source\Texture\textureclass.cpp" />
+    <ClCompile Include="source\Text\fontclass.cpp" />
+    <ClCompile Include="source\Text\fontshaderclass.cpp" />
+    <ClCompile Include="source\Text\textclass.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals" />
   <PropertyGroup Label="Globals">
     <ProjectGuid>{932C8A49-77B1-4FE7-BBF1-B8F7C4F0D60B}</ProjectGuid>
@@ -94,7 +133,7 @@
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>dxstdafx.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;source;source/PCH;</AdditionalIncludeDirectories>
       <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
@@ -111,7 +150,7 @@
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>dxstdafx.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;source;source/PCH;</AdditionalIncludeDirectories>
       <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
@@ -128,7 +167,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;source;source/PCH;</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>dxstdafx.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -148,7 +187,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;source;source/PCH;</AdditionalIncludeDirectories>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -164,45 +203,6 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include=".\dxstdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="cameraclass.cpp" />
-    <ClCompile Include="DxCanvas.cpp" />
-    <ClCompile Include="d3dclass.cpp" />
-    <ClCompile Include="fontclass.cpp" />
-    <ClCompile Include="fontshaderclass.cpp" />
-    <ClCompile Include="graphicsclass.cpp" />
-    <ClCompile Include="lightclass.cpp" />
-    <ClCompile Include="modelclass.cpp" />
-    <ClCompile Include="PixelShader.cpp" />
-    <ClCompile Include="textclass.cpp" />
-    <ClCompile Include="textureclass.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="VertexShader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include=".\dxstdafx.h" />
-    <ClInclude Include="cameraclass.h" />
-    <ClInclude Include="DxCanvas.h" />
-    <ClInclude Include="d3dclass.h" />
-    <ClInclude Include="fontclass.h" />
-    <ClInclude Include="fontshaderclass.h" />
-    <ClInclude Include="graphicsclass.h" />
-    <ClInclude Include="lightclass.h" />
-    <ClInclude Include="modelclass.h" />
-    <ClInclude Include="PixelShader.h" />
-    <ClInclude Include="RenderInfo.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="textclass.h" />
-    <ClInclude Include="textureclass.h" />
-    <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="VertexShader.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
