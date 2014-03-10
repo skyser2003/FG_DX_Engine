@@ -26,3 +26,6 @@ Release/*
 
 #Visual Studio personal settings
 *.user
+
+# Cmake
+build
