@@ -47,7 +47,9 @@ ADD_LIBRARY (DxCanvas
 ${DX_SOURCE_FILES}
 )
 FOREACH(subdir ${DX_SOURCE_SUBDIRS})
-    SOURCE_GROUP(${subdir} FILES ${DX_SOURCE_DIR}/${subdir}/*.cpp ${DX_SOURCE_DIR}/${subdir}/*.h)
+	STRING(REPLACE "/" "\\" tempSubdir ${subdir})
+	FILE(GLOB subdir_files ${DX_SOURCE_DIR}/${subdir}/*.cpp ${DX_SOURCE_DIR}/${subdir}/*.h)
+    SOURCE_GROUP(${tempSubdir} FILES ${subdir_files})
 ENDFOREACH()
 
 INCLUDE_DIRECTORIES( ${DX_SOURCE_DIR} )
